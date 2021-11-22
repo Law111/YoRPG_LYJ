@@ -1,53 +1,74 @@
-public class Monster{
-  private int health;
-  private int str; // modifier for damage rolls
-  private int precision; //modifier for attack rolls
-  private int ac; // Armor Class. Used to determine if attack misses.
+/*
+  class Monster -- Represents random incarnations of 
+  the adventurer's natural enemy in Ye Olde RPG
+**/
 
-  public Monster(){
-    str = modifier();
-    precision = modifier();
-    health = 15 + modifier();
-    ac = 12 + modifier();
-  }
+public class Monster {
 
-  public int rollDie(int sideNum){
-    return (int) (Math.random() * sideNum) + 1;
-  }
+  // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+  private int _hitPts;
+  private int _strength;
+  private int _defense;
+  private double _attack;
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  public int modifier(){
-    return (int) (Math.random() * 5);
-  }
 
-  public int getAC(){ //used in Protagonist
-    return ac;
-  }
-
-  public boolean isAlive(){
-    return health > 0;
-  }
-
-  public void takeDamage(int d){ //used in Protagonist
-    health -= d;
-  }
-
-  public int attack(Protagonist p){
-    int damage = 0;
-    // regular attack
-    if (! p.getSpecial()){
-      // attack roll. 1d20 + precision. Greater than opponent AC = hit.
-      if (rollDie(20) + precision > p.getAC()){
-        damage = rollDie(6) + str; //dmg roll. 1d6 + str
-      }
-    // special attack
-    } else {
-      if (rollDie(20) + precision > p.getAC()){
-        damage = (rollDie(6) + rollDie(6) + str); //dmg roll. 2d6 + str
-      }
-    }
-    p.takeDamage(damage); //protag takes damage
-    return damage; //show damage dealt.
+  /**
+     default constructor
+     pre:  instance vars are declared
+     post: initializes instance vars.
+  **/
+  public Monster() {
+    _hitPts = 150;
+    _strength = 20 + (int)( Math.random() * 45 ); // [20,65)
+    _defense = 20;
+    _attack = 1;
   }
 
 
-}
+  // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
+  public int getDefense() { return _defense; }
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+  /**
+     boolean isAlive() -- tell whether I am alive
+     post: returns boolean indicated alive or dead
+  **/
+  public boolean isAlive() {
+    return _hitPts > 0;
+  }
+
+
+  /**
+     int attack(Warrior) -- simulates attack on a Warrior
+     pre:  Input not null
+     post: Calculates damage to be inflicted, flooring at 0. 
+     Calls opponent's lowerHP() method to inflict damage. 
+     Returns damage dealt.
+  **/
+  public int attack( Protagonist opponent ) {
+
+    int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+    //System.out.println( "\t\t**DIAG** damage: " + damage );
+
+    if ( damage < 0 )
+      damage = 0;
+
+    opponent.lowerHP( damage );
+
+    return damage;
+  }//end attack
+
+
+  /**
+     void lowerHP(int) -- lowers life by input value
+     pre:  Input >= 0
+     post: Life instance var is lowered by input ammount.
+  **/
+  public void lowerHP( int damageInflicted ) {
+    _hitPts = _hitPts - damageInflicted;
+  }
+
+}//end class Monster
+

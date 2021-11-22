@@ -1,72 +1,100 @@
-public class Protagonist{
-  private int health;
-  private int str; // modifier for damage rolls
-  private int precision; //modifier for attack rolls
-  private String heroName;
-  private int ac; // Armor Class. Used to determine if attack misses.
-  private boolean special;
+/**
+  class Protagonist -- protagonist of Ye Olde RPG
+  **/
 
-  public Protagonist(String name){
-    heroName = name;
-    str = modifier();
-    precision = modifier();
-    health = 100 + modifier();
-    ac = 14 + modifier();
-  }
+public class Protagonist {
 
-  public String getName(){
-    return heroName;
-  }
+    // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+    private String _name = "J. Doe";
+    private int _hitPts;
+    private int _strength;
+    private int _defense;
+    private double _attack;
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  public boolean getSpecial(){
-    return special;
-  }
 
-  public int rollDie(int sideNum){
-    return (int) (Math.random() * sideNum) + 1;
-  }
-
-  public int modifier(){
-    return (int) (Math.random() * 6);
-  }
-
-  public boolean isAlive(){
-    return health > 0;
-  }
-
-  public void takeDamage(int d){ //used in Monster
-    health -= d;
-  }
-
-  public int getAC(){ //used in Monster
-    return ac;
-  }
-
-  public void specialize(){
-    special = true;
-  }
-
-  public void normalize(){
-    special = false;
-  }
-
-  public int attack(Monster m){
-    int damage = 0;
-    // regular attack
-    if (!special){
-      // attack roll. 1d20 + precision. Greater than opponent AC = hit.
-      if (rollDie(20) + precision > m.getAC()){
-        damage = rollDie(8) + str; //dmg roll. 1d8 + str
-      }
-    // special attack
-    } else{
-      // attack roll. 1d20 + precision. Greater than opponent AC = hit.
-      if (rollDie(20) + precision > m.getAC()){
-        damage = (rollDie(8) + rollDie(8) + str) ; //dmg roll. 2d8 + str
-      }
+    /**
+      default constructor
+      pre:  instance vars are declared
+      post: initializes instance vars.
+      **/
+    public Protagonist() {
+        _hitPts = 125;
+        _strength = 100;
+        _defense = 40;
+        _attack = .4;
     }
-    m.takeDamage(damage); // monster takes damage after hit
-    return damage; // used to show amount of damage dealt
-  }
 
-}
+
+    /**
+      overloaded constructor
+      pre:  instance vars are declared
+      post: initializes instance vars. _name is set to input String.
+      **/
+    public Protagonist( String name ) {
+        this();
+        _name = name;
+    }
+
+
+    // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
+    public String getName() { return _name; }
+
+    public int getDefense() { return _defense; }
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    /**
+      boolean isAlive() -- tell whether I am alive
+      post: returns boolean indicated alive or dead
+      **/
+    public boolean isAlive() {
+        return _hitPts > 0;
+    }
+
+
+    /**
+      int attack(Monster) -- simulates attack on a Monster
+      pre:  Input not null
+      post: Calculates damage to be inflicted, flooring at 0.
+      Calls opponent's lowerHP() method to inflict damage.
+      Returns damage dealt.
+      **/
+    public int attack( Monster opponent ) {
+
+        int damage = (int)( (_strength * _attack) - opponent.getDefense() );
+        //System.out.println( "\t\t**DIAG** damage: " + damage );
+
+        if ( damage < 0 )
+            damage = 0;
+
+        opponent.lowerHP( damage );
+
+        return damage;
+    }//end attack
+
+
+    /**
+      void lowerHP(int) -- lowers life by input value
+      pre:  Input >= 0
+      post: Life instance var is lowered by input ammount.
+      **/
+    public void lowerHP( int damageInflicted ) {
+        _hitPts = _hitPts - damageInflicted;
+    }
+
+
+    //prepare a Protagonist for a special attack
+    public void specialize() {
+        _attack = .75;
+        _defense = 20;
+    }
+
+    //revert to normal mode
+    public void normalize() {
+        _attack = .4;
+        _defense = 40;
+    }
+
+}//end class Protagonist
+

@@ -2,18 +2,18 @@
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
  * Required classes: Protagonist, Monster
- *
+ * 
  * USAGE:
  * Compile. Note messages generated.
  * Devise a plan of attack with your trio.
  * Code incrementally, testing each bit of new functionality as you go.
  * The only modification you should make to this driver file is moving comment bar down in main method, and filling in DISCO/QCC
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
- *
+ * 
  * DISCO:
  *
- * QCC: Game uses a simple d20 system.
- *
+ * QCC:
+ * 
  **********************************************/
 
 import java.io.*;
@@ -50,13 +50,13 @@ public class YoRPG {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
+  
   // ~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~~~~~
 
   /*=============================================
     void newGame() -- gathers info to begin a new game
-    pre:
-    post: according to user input, modifies instance var for difficulty
+    pre:  
+    post: according to user input, modifies instance var for difficulty 
     and instantiates a Protagonist
     =============================================*/
   public void newGame() {
@@ -101,13 +101,13 @@ public class YoRPG {
     int d1, d2;
 
     if ( Math.random() >= ( difficulty / 3.0 ) )
-	    System.out.println( "\nNothing to see here. Move along!" );
+      System.out.println( "\nNothing to see here. Move along!" );
     else {
-	    System.out.println( "\nLo, yonder monster approacheth!" );
+      System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = new Monster();
+      smaug = new Monster();
 
-	    while( smaug.isAlive() && pat.isAlive() ) {
+      while( smaug.isAlive() && pat.isAlive() ) {
 
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,
@@ -132,26 +132,26 @@ public class YoRPG {
 
         System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
-	    }//end while
+      }//end while
 
-	    //option 1: you & the monster perish
-	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-        System.out.println( "'Twas an epic battle, to be sure... " +
+      //option 1: you & the monster perish
+      if ( !smaug.isAlive() && !pat.isAlive() ) {
+        System.out.println( "'Twas an epic battle, to be sure... " + 
                             "You cut ye olde monster down, but " +
                             "with its dying breath ye olde monster. " +
-                            "laid a fatal blow upon thy skull." );
+                            "laid a fatal blow upon thee." );
         return false;
-	    }
-	    //option 2: you slay the beast
-	    else if ( !smaug.isAlive() ) {
+      }
+      //option 2: you slay the beast
+      else if ( !smaug.isAlive() ) {
         System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
         return true;
-	    }
-	    //option 3: the beast slays you
-	    else if ( !pat.isAlive() ) {
+      }
+      //option 3: the beast slays you
+      else if ( !pat.isAlive() ) {
         System.out.println( "Ye olde self hath expired. You got dead." );
         return false;
-	    }
+      }
     }//end else
 
     return true;
@@ -160,7 +160,7 @@ public class YoRPG {
 
 
   public static void main( String[] args ) {
-    //As usual, move the begin-comment bar down as you progressively
+    //As usual, move the begin-comment bar down as you progressively 
     //test each new bit of functionality...
 
     //loading...
@@ -169,13 +169,16 @@ public class YoRPG {
     int encounters = 0;
 
     while( encounters < MAX_ENCOUNTERS ) {
-    if ( !game.playTurn() )
-    break;
-    encounters++;
-    System.out.println();
+      if ( !game.playTurn() )
+        break;
+      encounters++;
+      System.out.println();
     }
 
     System.out.println( "Thy game doth be over." );
+    /*================================================
+      ================================================*/
   }//end main
 
 }//end class YoRPG
+
