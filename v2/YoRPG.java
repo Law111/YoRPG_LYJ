@@ -28,11 +28,7 @@ public class YoRPG {
 
   //each round, a Protagonist and a Monster will be instantiated...
   private Protagonist pat;
-  private Protagonist2 pat;
-  private Protagonist3 pat;
   private Monster smaug;
-  private Monster2 smaug;
-  private Monster3 smaug;
 
   private int moveCount;
   private boolean gameOver;
