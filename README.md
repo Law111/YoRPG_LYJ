@@ -1,2 +1,2 @@
-# YoRPG_LYJ
-Lab01
+# YoRPG
+## LYJ: Yat Long Chan, Lawrence Joa, Joshua Gao
