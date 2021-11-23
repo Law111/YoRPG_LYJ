@@ -32,6 +32,9 @@ public class Protagonist extends Character {
         _name = name;
     }
 
+    public static String about(){
+      return "Knight";
+    }
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
     public String getName() { return _name; }
