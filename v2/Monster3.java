@@ -3,7 +3,7 @@
   the adventurer's natural enemy in Ye Olde RPG
 **/
 
-public class Monster3 extends Character {
+public class Monster3 extends Monster {
 
   /**
      default constructor
@@ -11,10 +11,8 @@ public class Monster3 extends Character {
      post: initializes instance vars.
   **/
   public Monster3() {
-     _hitPts = 120;
-     _strength = 10 + (int)( Math.random() * 45 ); // [10,55)
+     _strength = 15 + (int)( Math.random() * 45 ); // [15,60)
      _defense = 30;
-     _attack = 1;
   }
 
 

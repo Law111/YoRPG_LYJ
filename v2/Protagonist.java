@@ -5,7 +5,7 @@
 public class Protagonist extends Character {
 
     // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
-    private String _name = "J. Doe";
+    protected String _name = "J. Doe";
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -33,7 +33,7 @@ public class Protagonist extends Character {
     }
 
     public static String about(){
-      return "Fighter: Average Damage, Average Defense and Health";
+      return "Fighter: Average attack and strength, Average defense";
     }
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~

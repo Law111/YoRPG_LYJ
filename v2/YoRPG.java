@@ -79,8 +79,8 @@ public class YoRPG {
 
     s += "\nChoose your difficulty: \n";
     s += "\t1: " + Protagonist.about() + "\n";
-    s += "\t1: " + Protagonist2.about() + "\n";
-    s += "\t1: " + Protagonist3.about() + "\n";
+    s += "\t2: " + Protagonist2.about() + "\n";
+    s += "\t3: " + Protagonist3.about() + "\n";
     s += "Selection: ";
     System.out.print( s );
 
