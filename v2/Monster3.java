@@ -3,14 +3,14 @@
   the adventurer's natural enemy in Ye Olde RPG
 **/
 
-public class Monster extends Character {
+public class Monster3 extends Character {
 
   /**
      default constructor
      pre:  instance vars are declared
      post: initializes instance vars.
   **/
-  public Monster() {
+  public Monster3() {
      _hitPts = 120;
      _strength = 10 + (int)( Math.random() * 45 ); // [10,55)
      _defense = 30;

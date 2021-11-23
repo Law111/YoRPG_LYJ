@@ -33,7 +33,7 @@ public class Protagonist extends Character {
     }
 
     public static String about(){
-      return "Fighter";
+      return "Fighter: Average Damage, Average Defense and Health";
     }
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~

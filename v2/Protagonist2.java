@@ -2,7 +2,7 @@
   class Protagonist -- protagonist of Ye Olde RPG
   **/
 
-public class Protagonist extends Character {
+public class Protagonist2 extends Character {
 
     // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
     private String _name = "J. Doe";
@@ -14,7 +14,7 @@ public class Protagonist extends Character {
       pre:  instance vars are declared
       post: initializes instance vars.
       **/
-    public Protagonist() {
+    public Protagonist2() {
          _hitPts = 100;
          _strength = 150;
          _defense = 30;
@@ -27,13 +27,13 @@ public class Protagonist extends Character {
       pre:  instance vars are declared
       post: initializes instance vars. _name is set to input String.
       **/
-    public Protagonist( String name ) {
+    public Protagonist2( String name ) {
         this();
         _name = name;
     }
 
     public static String about(){
-      return "Rogue";
+      return "Rogue: + Damage, - Defense and Health";
     }
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
