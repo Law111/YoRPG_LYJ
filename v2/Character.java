@@ -1,8 +1,8 @@
 public class Character {
-    int _hitPts;
-    int _strength;
-    int _defense;
-    double _attack;
+    protected int _hitPts;
+    protected int _strength;
+    protected int _defense;
+    protected double _attack;
 
   public boolean isAlive() {
     return _hitPts > 0;
