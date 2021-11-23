@@ -10,8 +10,7 @@ public class Protagonist2 extends Protagonist {
       **/
     public Protagonist2() {
          _strength = 150;
-         _defense = 30;
-         _attack = .4;
+         _defense = 20;
     }
 
 

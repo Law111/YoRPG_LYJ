@@ -10,9 +10,8 @@ public class Protagonist3 extends Protagonist {
       post: initializes instance vars.
       **/
     public Protagonist3() {
-         _strength = 50;
+         _strength = 55;
          _defense = 70;
-         _attack = 0.4;
     }
 
 

@@ -2,18 +2,18 @@
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
  * Required classes: Protagonist, Monster
- * 
+ *
  * USAGE:
  * Compile. Note messages generated.
  * Devise a plan of attack with your trio.
  * Code incrementally, testing each bit of new functionality as you go.
  * The only modification you should make to this driver file is moving comment bar down in main method, and filling in DISCO/QCC
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
- * 
+ *
  * DISCO:
  *
  * QCC:
- * 
+ *
  **********************************************/
 
 import java.io.*;
@@ -33,7 +33,7 @@ public class YoRPG {
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
-  private int role; 
+  private int role;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -51,13 +51,13 @@ public class YoRPG {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-  
+
   // ~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~~~~~
 
   /*=============================================
     void newGame() -- gathers info to begin a new game
-    pre:  
-    post: according to user input, modifies instance var for difficulty 
+    pre:
+    post: according to user input, modifies instance var for difficulty
     and instantiates a Protagonist
     =============================================*/
   public void newGame() {
@@ -76,19 +76,19 @@ public class YoRPG {
 	    difficulty = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
-	  
+
     s = "\nChoose your role: \n";
     s += "\t1: " + Protagonist.about() + "\n";
     s += "\t2: " + Protagonist2.about() + "\n";
     s += "\t2: " + Protagonist3.about() + "\n";
     s += "Selection: ";
     System.out.print( s );
-	  
+
     try {
 	    role = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
-	  
+
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -105,7 +105,7 @@ public class YoRPG {
     } else {
       pat = new Protagonist3( name );
     }
-	    
+
 
   }//end newGame()
 
@@ -129,7 +129,7 @@ public class YoRPG {
       if (monsterType == 0){
         smaug = new Monster();
       } else if (monsterType == 1){
-	smaug = new Monster2();
+        smaug = new Monster2();
       } else {
         smaug = new Monster3();
       }
@@ -163,7 +163,7 @@ public class YoRPG {
 
       //option 1: you & the monster perish
       if ( !smaug.isAlive() && !pat.isAlive() ) {
-        System.out.println( "'Twas an epic battle, to be sure... " + 
+        System.out.println( "'Twas an epic battle, to be sure... " +
                             "You cut ye olde monster down, but " +
                             "with its dying breath ye olde monster. " +
                             "laid a fatal blow upon thee." );
@@ -187,7 +187,7 @@ public class YoRPG {
 
 
   public static void main( String[] args ) {
-    //As usual, move the begin-comment bar down as you progressively 
+    //As usual, move the begin-comment bar down as you progressively
     //test each new bit of functionality...
 
     //loading...
@@ -208,4 +208,3 @@ public class YoRPG {
   }//end main
 
 }//end class YoRPG
-
