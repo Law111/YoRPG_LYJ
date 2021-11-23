@@ -33,6 +33,7 @@ public class YoRPG {
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int role; 
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -75,7 +76,19 @@ public class YoRPG {
 	    difficulty = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
-
+	  
+    s = "\nChoose your role: \n";
+    s += "\t1: " + Protagonist.about() + "\n";
+    s += "\t2: " + Protagonist2.about() + "\n";
+    s += "\t2: " + Protagonist3.about() + "\n";
+    s += "Selection: ";
+    System.out.print( s );
+	  
+    try {
+	    role = Integer.parseInt( in.readLine() );
+    }
+    catch ( IOException e ) { }
+	  
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -85,7 +98,14 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Protagonist( name );
+    if (role == 1){
+      pat = new Protagonist( name );
+    } else if (role == 2){
+      pat = new Protagonist2( name );
+    } else {
+      pat = new Protagonist3( name );
+    }
+	    
 
   }//end newGame()
 
@@ -99,13 +119,20 @@ public class YoRPG {
   public boolean playTurn() {
     int i = 1;
     int d1, d2;
+    int monsterType = (int) (Math.random() * 3);
 
     if ( Math.random() >= ( difficulty / 3.0 ) )
       System.out.println( "\nNothing to see here. Move along!" );
     else {
       System.out.println( "\nLo, yonder monster approacheth!" );
 
-      smaug = new Monster();
+      if (monsterType == 0){
+        smaug = new Monster();
+      } else if (monsterType == 1){
+	smaug = new Monster2();
+      } else {
+        smaug = new Monster3();
+      }
 
       while( smaug.isAlive() && pat.isAlive() ) {
 
