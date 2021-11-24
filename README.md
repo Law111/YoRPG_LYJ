@@ -36,3 +36,4 @@
 
 ### v3 
 * Exception handling
+* Random element to attack() so that damage fluctuates.
