@@ -11,7 +11,7 @@ public class Protagonist3 extends Protagonist {
       **/
     public Protagonist3() {
          _strength = 55;
-         _defense = 70;
+         _defense = 60;
     }
 
 
@@ -37,13 +37,13 @@ public class Protagonist3 extends Protagonist {
     //prepare a Protagonist for a special attack
     public void specialize() {
         _attack = .75;
-        _defense = 20;
+        _defense = 35;
     }
 
     //revert to normal mode
     public void normalize() {
         _attack = .4;
-        _defense = 40;
+        _defense = 70;
     }
 
 }//end class Protagonist
