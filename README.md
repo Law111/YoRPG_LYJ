@@ -21,7 +21,7 @@
 * Subclass of Monster
 * Higher defense than Monster, lower attack
 
-## Version Updates
+## Changelog
 
 ### V0
 * Original version
