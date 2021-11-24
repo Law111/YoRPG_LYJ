@@ -1,4 +1,6 @@
-# YoRPG for LYJ: Yat Long Chan, Lawrence Joa, Joshua Gao
+# YoRPG Lab01
+### LYJ
+Yat Long Chan, Lawrence Joa, Joshua Gao
 
 ## New Classes
 ### Character class
