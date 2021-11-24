@@ -36,13 +36,13 @@ public class Protagonist2 extends Protagonist {
     //prepare a Protagonist for a special attack
     public void specialize() {
         _attack = .75;
-        _defense = 20;
+        _defense = 10;
     }
 
     //revert to normal mode
     public void normalize() {
         _attack = .4;
-        _defense = 40;
+        _defense = 20;
     }
 
 }//end class Protagonist
