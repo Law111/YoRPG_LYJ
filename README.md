@@ -23,24 +23,24 @@
 
 ## Changelog
 
-### V0
-* Original version
-
-### V1
-* Add character class
-
-### V2
-* Add protected keyword
-* Create Monster2/3 and Protagonist2/3
-* Change YoRPG to fit new Monster and Protagonists
+### v4
+* Balance updates
 
 ### v3
 * Exception handling
 * Random element to attack() so that damage fluctuates.
 * Rename Monster and Protagonist subclasses
 
-### v4
-* Balance updates
+### V2
+* Add protected keyword
+* Create Monster2/3 and Protagonist2/3
+* Change YoRPG to fit new Monster and Protagonists
+
+### V1
+* Add character class
+
+### V0
+* Original version
 
 ## Updates in future
 * Add unique abilities to different protagonist and monster types.
