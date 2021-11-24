@@ -17,7 +17,8 @@ public class Character {
   }
 
   public int attack(Character opponent){
-    int dmg = (int) (_strength * _attack) - opponent.getDefense();
+    int mod = (int) (Math.random() * 21);
+    int dmg = (int) (_strength * _attack + mod) - opponent.getDefense();
     if ( dmg < 0 )
         dmg = 0;
 
