@@ -46,3 +46,4 @@ Yat Long Chan, Lawrence Joa, Joshua Gao
 
 ## Updates in future
 * Add unique abilities to different protagonist and monster types.
+* More actions during encounter
