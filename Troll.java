@@ -1,18 +1,18 @@
 /*
-  class Monster -- Represents random incarnations of
+  class Troll -- Represents random incarnations of
   the adventurer's natural enemy in Ye Olde RPG
 **/
 
-public class Monster3 extends Monster {
+public class Troll extends Monster {
 
   /**
      default constructor
      pre:  instance vars are declared
      post: initializes instance vars.
   **/
-  public Monster3() {
-     _strength = 15 + (int)( Math.random() * 45 ); // [15,60)
-     _defense = 30;
+  public Troll() {
+     _hitPts = 125;
+     _strength = 25 + (int)( Math.random() * 35 ); // [25,60)
   }
 
 

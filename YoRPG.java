@@ -90,9 +90,9 @@ public class YoRPG {
     }
 
     s = "\nChoose your role: \n";
-    s += "\t1: " + Protagonist.about() + "\n";
-    s += "\t2: " + Protagonist2.about() + "\n";
-    s += "\t3: " + Protagonist3.about() + "\n";
+    s += "\t1: " + Fighter.about() + "\n";
+    s += "\t2: " + Rogue.about() + "\n";
+    s += "\t3: " + Knight.about() + "\n";
     s += "Selection: ";
     System.out.print( s );
 
@@ -100,9 +100,9 @@ public class YoRPG {
 	    role = Integer.parseInt( in.readLine() );
       while (role < 1 || role > 3){
         s = "\nPlease enter a valid number.\n";
-        s += "\t1: " + Protagonist.about() + "\n";
-        s += "\t2: " + Protagonist2.about() + "\n";
-        s += "\t2: " + Protagonist3.about() + "\n";
+        s += "\t1: " + Fighter.about() + "\n";
+        s += "\t2: " + Rogue.about() + "\n";
+        s += "\t2: " + Knight.about() + "\n";
         s += "Selection: ";
         System.out.print( s );
         role = Integer.parseInt( in.readLine() );
@@ -126,11 +126,11 @@ public class YoRPG {
 
     //instantiate the player's character
     if (role == 1){
-      pat = new Protagonist( name );
+      pat = new Fighter( name );
     } else if (role == 2){
-      pat = new Protagonist2( name );
+      pat = new Rogue( name );
     } else {
-      pat = new Protagonist3( name );
+      pat = new Knight( name );
     }
 
 
@@ -154,11 +154,11 @@ public class YoRPG {
       System.out.println( "\nLo, yonder monster approacheth!" );
 
       if (monsterType == 0){
-        smaug = new Monster();
+        smaug = new Goblin();
       } else if (monsterType == 1){
-        smaug = new Monster2();
+        smaug = new Troll();
       } else {
-        smaug = new Monster3();
+        smaug = new Ninja();
       }
 
       while( smaug.isAlive() && pat.isAlive() ) {

@@ -1,18 +1,18 @@
 /*
-  class Monster -- Represents random incarnations of
+  class Ninja -- Represents random incarnations of
   the adventurer's natural enemy in Ye Olde RPG
 **/
 
-public class Monster2 extends Monster {
+public class Ninja extends Monster {
 
   /**
      default constructor
      pre:  instance vars are declared
      post: initializes instance vars.
   **/
-  public Monster2() {
-     _hitPts = 90;
-     _strength = 25 + (int)( Math.random() * 45 ); // [25,70)
+  public Ninja() {
+     _strength = 15 + (int)( Math.random() * 35 ); // [15,50)
+     _defense = 30;
   }
 
 

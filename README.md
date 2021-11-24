@@ -9,15 +9,15 @@
 * Subclass of Protagonist
 * Higher strength than Protagonist, lower defense
 
-### Protagonist3 
+### Protagonist3
 * Subclass of Protagonist
 * Higher defense than Protagonist, lower attack
 
-### Monster2 
+### Monster2
 * Subclass of Monster
 * Higher strength than Monster, lower defense
 
-### Protagonist3 
+### Protagonist3
 * Subclass of Monster
 * Higher defense than Monster, lower attack
 
@@ -29,11 +29,15 @@
 ### V1
 * Add character class
 
-### V2 
+### V2
 * Add protected keyword
 * Create Monster2/3 and Protagonist2/3
 * Change YoRPG to fit new Monster and Protagonists
 
-### v3 
+### v3
 * Exception handling
 * Random element to attack() so that damage fluctuates.
+* Rename Monster and Protagonist subclasses
+
+## Updates in future
+* Add unique abilities to different protagonist and monster types. 
