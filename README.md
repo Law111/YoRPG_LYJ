@@ -39,5 +39,8 @@
 * Random element to attack() so that damage fluctuates.
 * Rename Monster and Protagonist subclasses
 
+### v4
+* Balance updates
+
 ## Updates in future
-* Add unique abilities to different protagonist and monster types. 
+* Add unique abilities to different protagonist and monster types.

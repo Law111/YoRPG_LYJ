@@ -11,17 +11,9 @@
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
  *
  * DISCO:
- * Superclass variable can have an object type of any of its subclasses but the reverse cannot occur.
- * Use try-catch for exception handling.
- *
  *
  * QCC:
- * none
  *
- * OUR DRIVER MODS:
- * Change IOException to Exception in general.
- * add while loops to try body to ensure number within the options is picked.
- * added catch body.
  **********************************************/
 
 import java.io.*;
@@ -116,7 +108,7 @@ public class YoRPG {
         role = Integer.parseInt( in.readLine() );
       }
     }
-    catch ( Exception e ) {
+    catch ( IOException e ) {
       System.out.println("Error. Not valid input. Default to role 1.");
       role = 1;
     }
@@ -127,7 +119,7 @@ public class YoRPG {
     try {
 	    name = in.readLine();
     }
-    catch ( Exception e ) {
+    catch ( IOException e ) {
       System.out.println("Error. Not valid input. Set default name.");
       name = "J. Doe";
     }
@@ -184,7 +176,7 @@ public class YoRPG {
             i = Integer.parseInt( in.readLine() );
           }
         }
-        catch ( Exception e ) {
+        catch ( IOException e ) {
           System.out.println("Error. Invalid input. Default to 1.");
           i = 1;
         }

@@ -1,0 +1,8 @@
+DISCO:
+Superclass variable can have an object type of any of its subclasses but the reverse cannot occur.
+Use try-catch for exception handling.
+super is the equivalent of this but with superclasses
+super() is the equivalent of this() but with superclasses
+
+QCC:
+none

@@ -1,18 +1,24 @@
 /**
-  class Knight -- protagonist of Ye Olde RPG
+  class Protagonist -- protagonist of Ye Olde RPG
   **/
 
-public class Knight extends Protagonist {
+public class Protagonist extends Character {
+
+    // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
+    protected String _name = "J. Doe";
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
     /**
       default constructor
       pre:  instance vars are declared
       post: initializes instance vars.
       **/
-    public Knight() {
-         super();
-         _strength = 55;
-         _defense = 55;
+    public Protagonist() {
+         _hitPts = 125;
+         _strength = 100;
+         _defense = 40;
+         _attack = .4;
     }
 
 
@@ -21,30 +27,26 @@ public class Knight extends Protagonist {
       pre:  instance vars are declared
       post: initializes instance vars. _name is set to input String.
       **/
-    public Knight( String name ) {
+    public Protagonist( String name ) {
         this();
         _name = name;
     }
 
-    public static String about(){
-      return "Knight: - damage, + defense";
-    }
 
     // ~~~~~~~~~~~~~~ ACCESSORS ~~~~~~~~~~~~~~~~~
     public String getName() { return _name; }
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
     //prepare a Protagonist for a special attack
     public void specialize() {
         _attack = .75;
-        _defense = 30;
+        _defense = 20;
     }
 
     //revert to normal mode
     public void normalize() {
         _attack = .4;
-        _defense = 55;
+        _defense = 40;
     }
 
 }//end class Protagonist
