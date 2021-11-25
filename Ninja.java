@@ -12,7 +12,6 @@ public class Ninja extends Monster {
   **/
   public Ninja() {
      super();
-     _strength = 15 + (int)( Math.random() * 35 ); // [15,50)
      _defense = 30;
   }
 

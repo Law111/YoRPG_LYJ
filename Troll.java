@@ -12,7 +12,6 @@ public class Troll extends Monster {
   **/
   public Troll() {
      super();
-     _hitPts = 125;
      _strength = 25 + (int)( Math.random() * 35 ); // [25,60)
   }
 

@@ -12,6 +12,10 @@ public class Character {
     return _defense;
   }
 
+  public void addHP(int hp) {
+    _hitPts += hp;
+  }
+
   public void lowerHP(int dmg){
     _hitPts -= dmg;
   }

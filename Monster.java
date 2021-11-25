@@ -14,7 +14,7 @@ public class Monster extends Character {
      _hitPts = 110;
      _strength = 20 + (int)( Math.random() * 35 ); // [20,55)
      _defense = 20;
-     _attack = 0.80;
+     _attack = 0.93;
   }
 
 
