@@ -207,6 +207,7 @@ public class YoRPG {
       //option 2: you slay the beast
       else if ( !smaug.isAlive() ) {
         System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+        pat.addHP(20);
         return true;
       }
       //option 3: the beast slays you
