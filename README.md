@@ -25,6 +25,10 @@ Yat Long Chan, Lawrence Joa, Joshua Gao
 
 ## Changelog
 
+### v5
+* Balance updates
+* Regen health after defeating monster
+
 ### v4
 * Balance updates
 
