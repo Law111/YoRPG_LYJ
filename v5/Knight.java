@@ -12,7 +12,7 @@ public class Knight extends Protagonist {
     public Knight() {
          super();
          _strength = 55;
-         _defense = 50;
+         _defense = 45;
     }
 
 
