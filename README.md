@@ -27,6 +27,10 @@ Yat Long Chan, Lawrence Joa, Joshua Gao
 
 ### v4
 * Balance updates
+* Regen health after defeating monster
+
+### v4
+* Balance updates
 
 ### v3
 * Exception handling
