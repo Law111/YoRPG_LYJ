@@ -3,23 +3,32 @@
 Yat Long Chan, Lawrence Joa, Joshua Gao
 
 ## New Classes
+
 ### Character class
 * Superclass for all Protagonist and Monster classes
 * used to avoid having to create similar methods and variables in all classes
 
-### Protagonist2
+### Fighter
+* Subclass of Protagonist
+* Average stats
+* 
+### Rogue
 * Subclass of Protagonist
 * Higher strength than Protagonist, lower defense
 
-### Protagonist3
+### Knight
 * Subclass of Protagonist
 * Higher defense than Protagonist, lower attack
 
-### Monster2
+### Goblin
+* Subclass of Monster
+* Average stats
+
+### Troll
 * Subclass of Monster
 * Higher strength than Monster, lower defense
 
-### Protagonist3
+### Ninja
 * Subclass of Monster
 * Higher defense than Monster, lower attack
 
