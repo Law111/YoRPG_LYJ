@@ -26,7 +26,7 @@ Yat Long Chan, Lawrence Joa, Joshua Gao
 
 ### Troll
 * Subclass of Monster
-* Higher strength than Monster, lower defense
+* Higher strength than Monster
 
 ### Ninja
 * Subclass of Monster
