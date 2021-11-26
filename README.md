@@ -11,7 +11,7 @@ Yat Long Chan, Lawrence Joa, Joshua Gao
 ### Fighter
 * Subclass of Protagonist
 * Average stats
-* 
+
 ### Rogue
 * Subclass of Protagonist
 * Higher strength than Protagonist, lower defense
